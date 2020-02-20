@@ -33,6 +33,15 @@ abstract class BaseActivity : AppCompatActivity() {
         super.onActivityResult(requestCode, resultCode, data)
     }
 
+    override fun onRequestPermissionsResult(
+        requestCode: Int,
+        permissions: Array<out String>,
+        grantResults: IntArray
+    ) {
+        log("onRequestPermissionsResult")
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+    }
+
     override fun onResume() {
         log("onResume")
         super.onResume()
@@ -48,6 +57,14 @@ abstract class BaseActivity : AppCompatActivity() {
         super.onStop()
     }
 
+    /**
+     * From the docs in P: "If called, this method will occur after onStop() for applications
+     * targeting platforms starting with Android P.
+     *
+     * For applications targeting earlier platform versions this method will occur
+     * before onStop() and there are no guarantees about whether it will
+     * occur before or after onPause()."
+     */
     override fun onSaveInstanceState(outState: Bundle) {
         log("onSaveInstanceState")
         super.onSaveInstanceState(outState)

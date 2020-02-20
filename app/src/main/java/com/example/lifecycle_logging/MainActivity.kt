@@ -22,7 +22,7 @@ class MainActivity : BaseActivity() {
     }
 
     fun translucentActivity() {
-        // TODO
+        startActivity(Intent(this, StackedTranslucentActivity::class.java))
     }
 
     fun replaceFragment() {
