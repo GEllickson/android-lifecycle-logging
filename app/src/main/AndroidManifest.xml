@@ -35,6 +35,11 @@
         <service
             android:name=".ForegroundService"
             android:exported="false" />
+
+        <provider
+            android:name=".SimpleContentProvider"
+            android:authorities="${applicationId}.SimpleContentProvider"
+            android:exported="false" />
     </application>
 
 </manifest>
