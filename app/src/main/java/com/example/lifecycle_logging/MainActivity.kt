@@ -1,6 +1,10 @@
 package com.example.lifecycle_logging
 
 import android.Manifest
+import android.app.AlarmManager
+import android.app.PendingIntent
+import android.content.BroadcastReceiver
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AlertDialog
@@ -79,6 +83,26 @@ class MainActivity : BaseActivity() {
 
     fun stopForegroundService() {
         stopService(Intent(this, ForegroundService::class.java))
+    }
+
+    fun broadcastReceiver() {
+        triggerAlarm(0)
+    }
+
+    fun delayedBroadcastReceiver() {
+        triggerAlarm(10_000L)
+    }
+
+    private fun triggerAlarm(delayMillis: Long) {
+        val am = getSystemService(Context.ALARM_SERVICE) as AlarmManager
+        val intent = Intent(this, SimpleReceiver::class.java)
+        val pendingIntent = PendingIntent.getBroadcast(
+            this,
+            0, intent,
+            PendingIntent.FLAG_UPDATE_CURRENT
+        )
+        val delay = System.currentTimeMillis() + delayMillis
+        am.setExact(AlarmManager.RTC_WAKEUP, delay, pendingIntent)
     }
 
 }

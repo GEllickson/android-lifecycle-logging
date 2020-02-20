@@ -152,8 +152,8 @@
                 android:layout_marginEnd="4dp"
                 android:onClick="@{() -> mainActivity.startForegroundService()}"
                 android:text="Start Foreground"
-                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toStartOf="@id/button_stop_foreground"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/button_stop_service" />
 
             <Button
@@ -167,6 +167,41 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@id/button_start_foreground"
                 app:layout_constraintTop_toTopOf="@id/button_start_foreground" />
+
+            <TextView
+                android:id="@+id/text_broadcast_receiver"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:gravity="center"
+                android:text="Broadcast Receiver"
+                android:textAppearance="?attr/textAppearanceSubtitle1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/button_start_foreground" />
+
+            <Button
+                android:id="@+id/button_broadcast"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginEnd="4dp"
+                android:onClick="@{() -> mainActivity.broadcastReceiver()}"
+                android:text="Broadcast"
+                app:layout_constraintBottom_toBottomOf="@id/button_delayed_broadcast"
+                app:layout_constraintEnd_toStartOf="@id/button_delayed_broadcast"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/button_delayed_broadcast" />
+
+            <Button
+                android:id="@+id/button_delayed_broadcast"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:onClick="@{() -> mainActivity.delayedBroadcastReceiver()}"
+                android:text="Delayed Broadcast (10s)"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/button_broadcast"
+                app:layout_constraintTop_toBottomOf="@id/text_broadcast_receiver" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
