@@ -59,8 +59,16 @@ class MainActivity : BaseActivity() {
         )
     }
 
-    fun startStopService(start: Boolean) {
-        // TODO
+    fun startNotStickyService() {
+        startService(SimpleService.intent(this, false))
+    }
+
+    fun startStickyService() {
+        startService(SimpleService.intent(this, true))
+    }
+
+    fun stopService() {
+        stopService(Intent(this, SimpleService::class.java))
     }
 
 }
