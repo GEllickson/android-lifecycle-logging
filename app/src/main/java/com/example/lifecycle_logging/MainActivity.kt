@@ -5,6 +5,7 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AlertDialog
 import androidx.core.app.ActivityCompat
+import androidx.core.content.ContextCompat
 
 
 class MainActivity : BaseActivity() {
@@ -69,6 +70,15 @@ class MainActivity : BaseActivity() {
 
     fun stopService() {
         stopService(Intent(this, SimpleService::class.java))
+    }
+
+    fun startForegroundService() {
+        val intent = Intent(this, ForegroundService::class.java)
+        ContextCompat.startForegroundService(this, intent)
+    }
+
+    fun stopForegroundService() {
+        stopService(Intent(this, ForegroundService::class.java))
     }
 
 }
