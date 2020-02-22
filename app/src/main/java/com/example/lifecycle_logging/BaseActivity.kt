@@ -13,9 +13,9 @@ abstract class BaseActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
     }
 
-    override fun onStart() {
-        log("onStart")
-        super.onStart()
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        log("onActivityResult")
+        super.onActivityResult(requestCode, resultCode, data)
     }
 
     override fun onRestart() {
@@ -23,14 +23,14 @@ abstract class BaseActivity : AppCompatActivity() {
         super.onRestart()
     }
 
+    override fun onStart() {
+        log("onStart")
+        super.onStart()
+    }
+
     override fun onRestoreInstanceState(savedInstanceState: Bundle) {
         log("onRestoreInstanceState")
         super.onRestoreInstanceState(savedInstanceState)
-    }
-
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        log("onActivityResult")
-        super.onActivityResult(requestCode, resultCode, data)
     }
 
     override fun onRequestPermissionsResult(
