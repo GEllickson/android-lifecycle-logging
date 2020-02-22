@@ -11,4 +11,12 @@
         <item name="windowNoTitle">true</item>
     </style>
 
+    <style name="Button.Green" parent="Widget.MaterialComponents.Button">
+        <item name="colorPrimary">#43a047</item>
+    </style>
+
+    <style name="Button.Violet" parent="Widget.MaterialComponents.Button">
+        <item name="colorPrimary">#5c6bc0</item>
+    </style>
+
 </resources>

@@ -11,7 +11,6 @@ class SimpleReceiver : BroadcastReceiver() {
         log("onReceive")
         val pendingResult = goAsync()
         thread {
-            val delay = 1000L
             log("manually going Async for 1 second")
             Thread.sleep(1000L)
             log("Async finished. The receiver can now be garbage collected")
