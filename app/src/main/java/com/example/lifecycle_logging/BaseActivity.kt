@@ -9,7 +9,7 @@ abstract class BaseActivity : AppCompatActivity() {
     abstract val tagName: String
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        log("onCreate")
+        log("onCreate, , SavedInstanceState: ${savedInstanceState != null}")
         super.onCreate(savedInstanceState)
     }
 

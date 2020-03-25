@@ -16,7 +16,7 @@ class MainFragment : BaseFragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        log("onCreateView")
+        log("onCreateView, SavedInstanceState: ${savedInstanceState != null}")
         val binding = FragmentMainBinding.inflate(inflater)
         // NOTE: normally you probably shouldn't do this...
         binding.mainActivity = activity as MainActivity

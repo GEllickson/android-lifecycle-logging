@@ -15,7 +15,7 @@ class NextFragment : BaseFragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        log("onCreateView")
+        log("onCreateView, , SavedInstanceState: ${savedInstanceState != null}")
         return inflater.inflate(R.layout.fragment_next, container, false)
     }
 }

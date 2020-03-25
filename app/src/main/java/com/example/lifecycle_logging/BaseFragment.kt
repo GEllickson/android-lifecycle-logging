@@ -18,7 +18,7 @@ abstract class BaseFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        log("onCreate")
+        log("onCreate, SavedInstanceState: ${savedInstanceState != null}")
     }
 
     // Call onCreateView from the subclasses
@@ -30,17 +30,17 @@ abstract class BaseFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        log("onViewCreated")
+        log("onViewCreated, SavedInstanceState: ${savedInstanceState != null}")
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        log("onActivityCreated")
+        log("onActivityCreated, SavedInstanceState: ${savedInstanceState != null}")
     }
 
     override fun onViewStateRestored(savedInstanceState: Bundle?) {
         super.onViewStateRestored(savedInstanceState)
-        log("onViewStateRestored")
+        log("onViewStateRestored, SavedInstanceState: ${savedInstanceState != null}")
     }
 
     override fun onStart() {
